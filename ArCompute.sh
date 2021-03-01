@@ -1,2 +1,5 @@
 #!/bin/bash -x
-#welcome to pgag
+
+echo "enter three inputs :: "
+read a b c
+echo "the inputs are : $a $b $c"
