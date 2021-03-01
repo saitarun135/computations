@@ -21,16 +21,29 @@ declare -a Array
 			echo "resulted-Array:" ${Array[@]}
 
 length="${#Array[@]}"
-for ((i=0; i<$length; i++))
-do
-   for ((j=$i; j<$length; j++))
-do
-if [[ ${Array[j]} -gt ${Array[i]} ]]
-then
-   temp=${Array[i]}
-   Array[i]=${Array[j]}
-   Array[j]=$temp
-fi
-done
-done
-echo "sorted-Array(descending order):" ${Array[@]}
+			for ((i=0; i<$length; i++))
+			do
+   			for ((j=$i; j<$length; j++))
+				do
+					if [[ ${Array[j]} -gt ${Array[i]} ]]
+					then
+   					temp=${Array[i]}
+   					Array[i]=${Array[j]}
+   					Array[j]=$temp
+					fi
+				done
+			done
+echo "Array(descending order):" ${Array[@]}
+ for ((i=0; i<$length; i++))
+         do
+            for ((j=$i; j<$length; j++))
+            do
+               if [[ ${Array[i]} -gt ${Array[j]} ]]
+               then
+                  temp=${Array[j]}
+                  Array[j]=${Array[i]}
+                  Array[i]=$temp
+               fi
+            done
+         done
+echo "Array(Ascending-order):" ${Array[@]}
